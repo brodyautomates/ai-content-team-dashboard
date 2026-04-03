@@ -3,180 +3,323 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Claude Code Content Team</title>
+  <title>Content OS</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<div class="app">
 
-  <div class="app">
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="topbar-brand">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <rect x="1" y="1" width="6" height="6" rx="1" stroke="#00ff88" stroke-width="1.2"/>
+        <rect x="9" y="1" width="6" height="6" rx="1" stroke="#00ff88" stroke-width="1.2"/>
+        <rect x="1" y="9" width="6" height="6" rx="1" stroke="#00ff88" stroke-width="1.2"/>
+        <rect x="9" y="9" width="6" height="6" rx="1" stroke="#00ff88" stroke-width="1.2"/>
+      </svg>
+      <span>Content OS</span>
+    </div>
+    <div class="topbar-status">
+      <span class="topbar-dot"></span>
+      <span>5 agents running</span>
+    </div>
+    <div class="topbar-clock" id="clock">00:00:00</div>
+  </header>
 
-    <!-- HEADER -->
-    <header class="header">
-      <div class="header-top">
-        <div class="brand">
-          <svg class="brand-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="2" y="2" width="7" height="7" rx="1.5" stroke="#00ff88" stroke-width="1.5"/>
-            <rect x="11" y="2" width="7" height="7" rx="1.5" stroke="#00ff88" stroke-width="1.5"/>
-            <rect x="2" y="11" width="7" height="7" rx="1.5" stroke="#00ff88" stroke-width="1.5"/>
-            <rect x="11" y="11" width="7" height="7" rx="1.5" stroke="#00ff88" stroke-width="1.5"/>
-          </svg>
-          <span class="brand-title">Claude Code Content Team</span>
-        </div>
-        <div class="system-badge">
-          <span class="system-dot"></span>
-          <span>System Online</span>
-        </div>
-      </div>
-
-      <div class="stat-bar">
-        <div class="stat">
-          <span class="stat-value" data-target="5" data-prefix="">0</span>
-          <span class="stat-label">Roles Active</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-value" data-target="8000" data-prefix="$">$0</span>
-          <span class="stat-label">Monthly Salary Saved</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-value static">24/7</span>
-          <span class="stat-label">Hours Running</span>
-        </div>
-      </div>
-    </header>
-
-    <!-- GRID -->
-    <main class="grid">
-
-      <!-- Card 1: Trend Researcher -->
-      <div class="card" style="--delay: 0.05s">
-        <div class="card-icon">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M16 28C16 28 8 21.6 8 14C8 9.58172 11.5817 6 16 6C20.4183 6 24 9.58172 24 14C24 21.6 16 28 16 28Z" stroke="#00ff88" stroke-width="1.5" stroke-linejoin="round"/>
-            <circle cx="16" cy="14" r="2.5" stroke="#00ff88" stroke-width="1.5"/>
-            <path d="M5 11C6.5 7.5 10 5 14 4.5" stroke="#00ff88" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
-            <path d="M27 11C25.5 7.5 22 5 18 4.5" stroke="#00ff88" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
-            <path d="M3 15.5C3.5 12 5 9 7.5 7" stroke="#00ff88" stroke-width="1.5" stroke-linecap="round" opacity="0.2"/>
-            <path d="M29 15.5C28.5 12 27 9 24.5 7" stroke="#00ff88" stroke-width="1.5" stroke-linecap="round" opacity="0.2"/>
-          </svg>
-        </div>
-        <div class="card-body">
-          <h3 class="card-role">Trend Researcher</h3>
-          <div class="card-divider"></div>
-          <p class="card-desc">Monitors Reddit, X, and YouTube for viral topic signals in real time</p>
-        </div>
-        <div class="card-status">
-          <span class="status-dot"></span>
-          <span class="status-text">ACTIVE</span>
-        </div>
-      </div>
-
-      <!-- Card 2: Content Strategist -->
-      <div class="card" style="--delay: 0.15s">
-        <div class="card-icon">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="5" y="5" width="9" height="9" rx="1.5" stroke="#00ff88" stroke-width="1.5"/>
-            <rect x="18" y="5" width="9" height="9" rx="1.5" stroke="#00ff88" stroke-width="1.5"/>
-            <rect x="5" y="18" width="9" height="9" rx="1.5" stroke="#00ff88" stroke-width="1.5"/>
-            <rect x="18" y="18" width="9" height="9" rx="1.5" stroke="#00ff88" stroke-width="1.5"/>
-            <circle cx="16" cy="16" r="2" fill="#00ff88" opacity="0.6"/>
-            <line x1="14" y1="16" x2="18" y2="16" stroke="#00ff88" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="16" y1="14" x2="16" y2="18" stroke="#00ff88" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="card-body">
-          <h3 class="card-role">Content Strategist</h3>
-          <div class="card-divider"></div>
-          <p class="card-desc">Converts trend data into structured 30-day content calendars</p>
-        </div>
-        <div class="card-status">
-          <span class="status-dot"></span>
-          <span class="status-text">ACTIVE</span>
-        </div>
-      </div>
-
-      <!-- Card 3: Scriptwriter -->
-      <div class="card" style="--delay: 0.25s">
-        <div class="card-icon">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="6" y="4" width="16" height="20" rx="2" stroke="#00ff88" stroke-width="1.5"/>
-            <line x1="10" y1="10" x2="18" y2="10" stroke="#00ff88" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="10" y1="14" x2="18" y2="14" stroke="#00ff88" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="10" y1="18" x2="15" y2="18" stroke="#00ff88" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M20 22L26 16L28 18L22 24L19 25L20 22Z" stroke="#00ff88" stroke-width="1.5" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="card-body">
-          <h3 class="card-role">Scriptwriter</h3>
-          <div class="card-divider"></div>
-          <p class="card-desc">Writes retention-optimized hooks, scripts, and CTAs at scale</p>
-        </div>
-        <div class="card-status">
-          <span class="status-dot"></span>
-          <span class="status-text">ACTIVE</span>
-        </div>
-      </div>
-
-      <!-- Card 4: Visual Designer -->
-      <div class="card card--offset-left" style="--delay: 0.35s">
-        <div class="card-icon">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="16,4 28,12 28,20 16,28 4,20 4,12" stroke="#00ff88" stroke-width="1.5" stroke-linejoin="round"/>
-            <polygon points="16,9 23,13.5 23,18.5 16,23 9,18.5 9,13.5" stroke="#00ff88" stroke-width="1.5" stroke-linejoin="round" opacity="0.5"/>
-            <circle cx="28" cy="6" r="1.5" fill="#00ff88" opacity="0.8"/>
-            <line x1="26.5" y1="4.5" x2="28" y2="6" stroke="#00ff88" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
-            <line x1="28" y1="4.5" x2="28" y2="6" stroke="#00ff88" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
-            <line x1="26.5" y1="6" x2="28" y2="6" stroke="#00ff88" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
-          </svg>
-        </div>
-        <div class="card-body">
-          <h3 class="card-role">Visual Designer</h3>
-          <div class="card-divider"></div>
-          <p class="card-desc">Generates thumbnail concepts and visual direction briefs</p>
-        </div>
-        <div class="card-status">
-          <span class="status-dot"></span>
-          <span class="status-text">ACTIVE</span>
-        </div>
-      </div>
-
-      <!-- Card 5: Performance Analyst -->
-      <div class="card card--offset-right" style="--delay: 0.45s">
-        <div class="card-icon">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="5" y="18" width="5" height="9" rx="1" stroke="#00ff88" stroke-width="1.5"/>
-            <rect x="13.5" y="12" width="5" height="15" rx="1" stroke="#00ff88" stroke-width="1.5"/>
-            <rect x="22" y="7" width="5" height="20" rx="1" stroke="#00ff88" stroke-width="1.5"/>
-            <path d="M7.5 15L13 9L16 13L22.5 5" stroke="#00ff88" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M21 5H25V9" stroke="#00ff88" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="card-body">
-          <h3 class="card-role">Performance Analyst</h3>
-          <div class="card-divider"></div>
-          <p class="card-desc">Tracks post metrics and feeds insights back into the content loop</p>
-        </div>
-        <div class="card-status">
-          <span class="status-dot"></span>
-          <span class="status-text">ACTIVE</span>
-        </div>
-      </div>
-
-    </main>
-
-    <!-- CTA STRIP -->
-    <footer class="cta-strip">
-      <p class="cta-text">
-        Comment <span class="cta-keyword">TEAM</span> for the exact prompts.
-      </p>
-    </footer>
-
+  <!-- METRIC STRIP -->
+  <div class="metric-strip">
+    <div class="metric">
+      <span class="metric-val" data-target="47">0</span>
+      <span class="metric-label">Tasks Today</span>
+    </div>
+    <div class="metric-sep"></div>
+    <div class="metric">
+      <span class="metric-val" data-target="12">0</span>
+      <span class="metric-label">Content Pieces</span>
+    </div>
+    <div class="metric-sep"></div>
+    <div class="metric">
+      <span class="metric-val static">99.9%</span>
+      <span class="metric-label">System Uptime</span>
+    </div>
   </div>
 
-  <script src="script.js"></script>
+  <!-- AGENT GRID -->
+  <main class="agent-grid">
+
+    <!-- Card 1: Trend Researcher -->
+    <div class="agent-card" data-agent="researcher" style="--i:0">
+      <div class="card-top">
+        <div class="card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M12 22C12 22 5 16.5 5 10.5C5 6.91 8.13 4 12 4C15.87 4 19 6.91 19 10.5C19 16.5 12 22 12 22Z" stroke="#00ff88" stroke-width="1.4" stroke-linejoin="round"/>
+            <circle cx="12" cy="10.5" r="2" stroke="#00ff88" stroke-width="1.4"/>
+            <path d="M3.5 8.5C4.5 5.5 7 3.5 10 3" stroke="#00ff88" stroke-width="1.3" stroke-linecap="round" opacity="0.35"/>
+            <path d="M20.5 8.5C19.5 5.5 17 3.5 14 3" stroke="#00ff88" stroke-width="1.3" stroke-linecap="round" opacity="0.35"/>
+          </svg>
+        </div>
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          <span>RUNNING</span>
+        </div>
+      </div>
+      <div class="card-identity">
+        <div class="card-name">Trend Researcher</div>
+        <div class="card-desc">Monitors signals across platforms in real time</div>
+      </div>
+      <div class="card-sep"></div>
+      <div class="card-section">
+        <div class="section-label">CURRENT TASK</div>
+        <div class="task-text" data-field="task">Scanning YouTube trending data</div>
+        <div class="progress-row">
+          <div class="progress-track">
+            <div class="progress-fill" data-field="bar" style="width: 78%"></div>
+          </div>
+          <span class="progress-pct" data-field="pct">78%</span>
+        </div>
+      </div>
+      <div class="card-sep"></div>
+      <div class="card-section">
+        <div class="output-header">
+          <span class="section-label">LAST OUTPUT</span>
+          <span class="output-time" data-field="time">2 min ago</span>
+        </div>
+        <div class="output-text" data-field="output">3 viral signals flagged</div>
+      </div>
+      <div class="card-sep"></div>
+      <div class="card-stats">
+        <div class="card-stat">
+          <span class="stat-label">Tasks</span>
+          <span class="stat-val">12</span>
+        </div>
+        <div class="card-stat">
+          <span class="stat-label">Accuracy</span>
+          <span class="stat-val">94%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Content Strategist -->
+    <div class="agent-card" data-agent="strategist" style="--i:1">
+      <div class="card-top">
+        <div class="card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="3" width="7" height="7" rx="1" stroke="#00ff88" stroke-width="1.4"/>
+            <rect x="14" y="3" width="7" height="7" rx="1" stroke="#00ff88" stroke-width="1.4"/>
+            <rect x="3" y="14" width="7" height="7" rx="1" stroke="#00ff88" stroke-width="1.4"/>
+            <rect x="14" y="14" width="7" height="7" rx="1" stroke="#00ff88" stroke-width="1.4"/>
+          </svg>
+        </div>
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          <span>RUNNING</span>
+        </div>
+      </div>
+      <div class="card-identity">
+        <div class="card-name">Content Strategist</div>
+        <div class="card-desc">Converts trend data into structured content calendars</div>
+      </div>
+      <div class="card-sep"></div>
+      <div class="card-section">
+        <div class="section-label">CURRENT TASK</div>
+        <div class="task-text" data-field="task">Building May content calendar</div>
+        <div class="progress-row">
+          <div class="progress-track">
+            <div class="progress-fill" data-field="bar" style="width: 45%"></div>
+          </div>
+          <span class="progress-pct" data-field="pct">45%</span>
+        </div>
+      </div>
+      <div class="card-sep"></div>
+      <div class="card-section">
+        <div class="output-header">
+          <span class="section-label">LAST OUTPUT</span>
+          <span class="output-time" data-field="time">5 min ago</span>
+        </div>
+        <div class="output-text" data-field="output">Week 3 slots filled — 6 posts queued</div>
+      </div>
+      <div class="card-sep"></div>
+      <div class="card-stats">
+        <div class="card-stat">
+          <span class="stat-label">Calendars</span>
+          <span class="stat-val">4</span>
+        </div>
+        <div class="card-stat">
+          <span class="stat-label">Coverage</span>
+          <span class="stat-val">30d</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Scriptwriter -->
+    <div class="agent-card" data-agent="scriptwriter" style="--i:2">
+      <div class="card-top">
+        <div class="card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <rect x="4" y="2" width="12" height="16" rx="1.5" stroke="#00ff88" stroke-width="1.4"/>
+            <line x1="7" y1="7" x2="13" y2="7" stroke="#00ff88" stroke-width="1.3" stroke-linecap="round"/>
+            <line x1="7" y1="10" x2="13" y2="10" stroke="#00ff88" stroke-width="1.3" stroke-linecap="round"/>
+            <line x1="7" y1="13" x2="10" y2="13" stroke="#00ff88" stroke-width="1.3" stroke-linecap="round"/>
+            <path d="M15 17L20 12L22 14L17 19L14 20L15 17Z" stroke="#00ff88" stroke-width="1.3" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          <span>RUNNING</span>
+        </div>
+      </div>
+      <div class="card-identity">
+        <div class="card-name">Scriptwriter</div>
+        <div class="card-desc">Writes retention-optimized hooks, scripts, and CTAs</div>
+      </div>
+      <div class="card-sep"></div>
+      <div class="card-section">
+        <div class="section-label">CURRENT TASK</div>
+        <div class="task-text" data-field="task">Writing hook variants (×4)</div>
+        <div class="progress-row">
+          <div class="progress-track">
+            <div class="progress-fill" data-field="bar" style="width: 91%"></div>
+          </div>
+          <span class="progress-pct" data-field="pct">91%</span>
+        </div>
+      </div>
+      <div class="card-sep"></div>
+      <div class="card-section">
+        <div class="output-header">
+          <span class="section-label">LAST OUTPUT</span>
+          <span class="output-time" data-field="time">just now</span>
+        </div>
+        <div class="output-text" data-field="output">Script #09 ready for review</div>
+      </div>
+      <div class="card-sep"></div>
+      <div class="card-stats">
+        <div class="card-stat">
+          <span class="stat-label">Scripts</span>
+          <span class="stat-val">9</span>
+        </div>
+        <div class="card-stat">
+          <span class="stat-label">Avg Score</span>
+          <span class="stat-val">8.4</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4: Visual Designer (bottom-left, centered) -->
+    <div class="agent-card card--bl" data-agent="designer" style="--i:3">
+      <div class="card-top">
+        <div class="card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <polygon points="12,2 22,8 22,16 12,22 2,16 2,8" stroke="#00ff88" stroke-width="1.4" stroke-linejoin="round"/>
+            <polygon points="12,7 18,10.5 18,13.5 12,17 6,13.5 6,10.5" stroke="#00ff88" stroke-width="1.3" stroke-linejoin="round" opacity="0.45"/>
+          </svg>
+        </div>
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          <span>RUNNING</span>
+        </div>
+      </div>
+      <div class="card-identity">
+        <div class="card-name">Visual Designer</div>
+        <div class="card-desc">Generates thumbnail concepts and visual briefs</div>
+      </div>
+      <div class="card-sep"></div>
+      <div class="card-section">
+        <div class="section-label">CURRENT TASK</div>
+        <div class="task-text" data-field="task">Generating thumbnail brief</div>
+        <div class="progress-row">
+          <div class="progress-track">
+            <div class="progress-fill" data-field="bar" style="width: 23%"></div>
+          </div>
+          <span class="progress-pct" data-field="pct">23%</span>
+        </div>
+      </div>
+      <div class="card-sep"></div>
+      <div class="card-section">
+        <div class="output-header">
+          <span class="section-label">LAST OUTPUT</span>
+          <span class="output-time" data-field="time">8 min ago</span>
+        </div>
+        <div class="output-text" data-field="output">Brief #12 exported to queue</div>
+      </div>
+      <div class="card-sep"></div>
+      <div class="card-stats">
+        <div class="card-stat">
+          <span class="stat-label">Briefs</span>
+          <span class="stat-val">12</span>
+        </div>
+        <div class="card-stat">
+          <span class="stat-label">CTR Lift</span>
+          <span class="stat-val">+22%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5: Performance Analyst (bottom-right, centered) -->
+    <div class="agent-card card--br" data-agent="analyst" style="--i:4">
+      <div class="card-top">
+        <div class="card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="14" width="4" height="7" rx="0.8" stroke="#00ff88" stroke-width="1.4"/>
+            <rect x="10" y="9" width="4" height="12" rx="0.8" stroke="#00ff88" stroke-width="1.4"/>
+            <rect x="17" y="5" width="4" height="16" rx="0.8" stroke="#00ff88" stroke-width="1.4"/>
+            <path d="M5 11L9.5 6.5L12 9.5L17.5 3.5" stroke="#00ff88" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16 3.5H19.5V7" stroke="#00ff88" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          <span>RUNNING</span>
+        </div>
+      </div>
+      <div class="card-identity">
+        <div class="card-name">Performance Analyst</div>
+        <div class="card-desc">Tracks metrics and feeds insights back into the loop</div>
+      </div>
+      <div class="card-sep"></div>
+      <div class="card-section">
+        <div class="section-label">CURRENT TASK</div>
+        <div class="task-text" data-field="task">Analyzing last 30 reels</div>
+        <div class="progress-row">
+          <div class="progress-track">
+            <div class="progress-fill" data-field="bar" style="width: 61%"></div>
+          </div>
+          <span class="progress-pct" data-field="pct">61%</span>
+        </div>
+      </div>
+      <div class="card-sep"></div>
+      <div class="card-section">
+        <div class="output-header">
+          <span class="section-label">LAST OUTPUT</span>
+          <span class="output-time" data-field="time">3 min ago</span>
+        </div>
+        <div class="output-text" data-field="output">Reel #042 — 42K views in 4h</div>
+      </div>
+      <div class="card-sep"></div>
+      <div class="card-stats">
+        <div class="card-stat">
+          <span class="stat-label">Insights</span>
+          <span class="stat-val">31</span>
+        </div>
+        <div class="card-stat">
+          <span class="stat-label">Accuracy</span>
+          <span class="stat-val">97%</span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ACTIVITY FEED -->
+  <footer class="feed-strip">
+    <span class="feed-label">LIVE FEED</span>
+    <div class="feed-entries" id="feed"></div>
+  </footer>
+
+</div>
+<script src="script.js"></script>
 </body>
 </html>
